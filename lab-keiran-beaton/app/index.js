@@ -33,6 +33,6 @@ crudApp.config(['$routeProvider', ($rp) => {
     template: require('./html/signin.html')
   })
   .otherwise({
-    redirectTo: 'lists'
+    redirectTo: 'signup'
   });
 }]);

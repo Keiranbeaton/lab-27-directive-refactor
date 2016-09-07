@@ -8,7 +8,7 @@ let userSchema = mongoose.Schema({
   username: String,
   basic: {
     email: {type: String, required: true, unique: true},
-    password: {typer: String, required: true}
+    password: {type: String, required: true}
   },
   role: {type: String, default: 'basic', required: true}
 });
