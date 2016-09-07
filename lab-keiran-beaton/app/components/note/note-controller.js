@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (app) => {
+module.exports = function(app) {
   app.controller('NoteController', ['$log', '$http', '$scope', NoteController]);
 
   function NoteController($log, $http) {

@@ -7,6 +7,7 @@ const angular = require('angular');
 const crudApp = angular.module('crudApp', []);
 
 crudApp.run(['$rootScope', ($rs) => {
+  $rs.authUrl = `${__API_URL__}/api`;
   $rs.listUrl = `${__API_URL__}/api/list`;
   $rs.noteUrl = `${__API_URL__}/api/note`;
   $rs.httpConfig = {

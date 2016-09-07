@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (app) => {
+module.exports = function(app) {
   app.controller('ListController', ['$log', '$http', ListController]);
 };
 
