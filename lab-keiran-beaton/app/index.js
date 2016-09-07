@@ -4,7 +4,10 @@ require('!!file?name=[name].[ext]!./html/index.html');
 require('./scss/base.scss');
 
 const angular = require('angular');
-const crudApp = angular.module('crudApp', []);
+const crudApp = angular.module('crudApp', [require('angular-route')]);
+
+require('./components')(crudApp);
+require('./controllers')(crudApp);
 
 crudApp.run(['$rootScope', ($rs) => {
   $rs.authUrl = `${__API_URL__}/api`;
@@ -18,4 +21,18 @@ crudApp.run(['$rootScope', ($rs) => {
   };
 }]);
 
-require('./components')(crudApp);
+crudApp.config(['$routeProvider', ($rp) => {
+  $rp
+  .when('/lists', {
+    template: require('./html/lists.html')
+  })
+  .when('/signup', {
+    template: require('./html/signup.html')
+  })
+  .when('/signin', {
+    template: require('./html/signin.html')
+  })
+  .otherwise({
+    redirectTo: 'lists'
+  });
+}]);
