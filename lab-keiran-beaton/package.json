@@ -1,7 +1,7 @@
 {
-  "name": "lab-27-directive-refactor",
+  "name": "lab-28-authorization",
   "version": "1.0.0",
-  "description": "refactoring lab 22 to work with directives",
+  "description": "Adding Authorization to directive refactor lab",
   "main": "index.js",
   "scripts": {
     "watch": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
@@ -30,6 +30,7 @@
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.13.2",
+    "bcrypt": "^0.8.7",
     "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
@@ -40,6 +41,7 @@
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.3",
     "http-errors": "^1.5.0",
+    "jsonwebtoken": "^7.1.9",
     "mongoose": "^4.5.9",
     "morgan": "^1.7.0",
     "node-sass": "^3.8.0",
