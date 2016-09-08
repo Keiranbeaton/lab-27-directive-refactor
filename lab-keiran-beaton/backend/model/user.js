@@ -23,9 +23,9 @@ userSchema.methods.generateHash = function(password) {
   });
 };
 
-userSchema.comparePassword = function(password) {
+userSchema.methods.comparePassword = function(password) {
   return new Promise((resolve, reject) => {
-    bcrypt.comapre(password, this.basic.password, (err, data) => {
+    bcrypt.compare(password, this.basic.password, (err, data) => {
       if (err) return reject(err);
       if (data === false) return reject(new Error('Password did not match'));
       resolve({token: jwt.sign({idd: this.basic.email}, process.env.APP_SECRET)});

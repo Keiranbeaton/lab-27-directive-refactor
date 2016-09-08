@@ -25,8 +25,8 @@ authRouter.get('/signin', BasicHTTP, (req, res, next) => {
   User.findOne({'basic.email': req.auth.username})
   .then((user) => {
     if (!user) return authError(new Error('No Such User'));
-    User.comparePassword(req.auth.password)
-    .then(res.json.bind(res, authError));
+    user.comparePassword(req.auth.password)
+    .then(res.json.bind(res), authError);
   }, authError);
 });
 
